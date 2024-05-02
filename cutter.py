@@ -26,7 +26,7 @@ def remove_brackets(list_string):
 warnings.simplefilter(action='ignore', category=FutureWarning)
 
 # Retrieve date from user to locate specific URL for that date, then go to URL and retrieve contents.
-URL_date = input("Enter month and year in YYMM format (example: 2106 for June 2021): ")
+URL_date = input("Enter month and year in YYMM format (example: 2106 for June 2021).\nIf there are multiple lists within the same month,\nbe sure to also include the letter for the individual list you are interested in\n(such as 01a, 01b, or 01c for multiple lists in January):\n")
 r = requests.get('https://classweb.org/approved/' + str(URL_date) + '.html')
 contents = r.text
 
@@ -154,11 +154,11 @@ df3 = df3[df3["All Class Numbers"] != "&nbsp;"]
 # Write to spreadsheet with column width set to longest caption name
 writer = pd.ExcelWriter('~/Desktop/cutter-list-' + str(URL_date) + '.xlsx') 
 
-df1.to_excel(writer, sheet_name='cutterList', index=False, na_rep='NaN')
-format_columns(df1, 'cutterList')
-df2.to_excel(writer, sheet_name='allCancels', index=False, na_rep='NaN')
-format_columns(df2, 'allCancels')
-df3.to_excel(writer, sheet_name='allList', index=False, na_rep='NaN')
-format_columns(df3, 'allList')
+df1.to_excel(writer, sheet_name='Classification Number Changes', index=False, na_rep='NaN')
+format_columns(df1, 'Classification Number Changes')
+df2.to_excel(writer, sheet_name='All Cancels', index=False, na_rep='NaN')
+format_columns(df2, 'All Cancels')
+df3.to_excel(writer, sheet_name='Complete List', index=False, na_rep='NaN')
+format_columns(df3, 'Complete List')
 
-writer.save()
+writer.close()
