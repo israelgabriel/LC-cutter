@@ -1,6 +1,6 @@
 # LC-cutter
 
-Every month, the Library of Congress releases changes and additions to LC classification numbers published to classweb.org/approved/. Most recently, the Library of Congress has begun releasing changed classification patterns for racial and ethnic group terms in response to pressure from the cataloging community to be more inclusive. NCSU Libraries has an interest in tracking and implementing these changes locally. We explored how to process these monthly lists using Python to filter the monthly results into a spreadsheet of changed classifications that could be reviewed and implemented as appropriate.
+Every month, the Library of Congress releases changes and additions to LC classifications published to classweb.org/approved/. Most recently, the Library of Congress has begun releasing changed classification patterns for racial and ethnic group terms in response to pressure from the cataloging community to be more inclusive. NCSU Libraries has an interest in tracking and implementing these changes locally. I explored how to process these monthly lists using Python to filter the monthly results into a spreadsheet of changed classifications that could be reviewed and implemented as appropriate.
 
 This script looks at the webpage to filter out results based on the words “see” and “CANCEL" and exports these into a spreadsheet to the user's desktop. It requires the following libraries to run:
 
